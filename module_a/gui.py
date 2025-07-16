@@ -1,13 +1,15 @@
 from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem
 from PyQt5 import QtCore
 from motion.core import RobotControl, LedLamp, Waypoint, InterpreterStates
-from fake_motion import RobotControl, LedLamp, Waypoint
 from core.design import Ui_MainWindow
 from config import Config
 from utils.logger import QtLogHandler, setup_logger
 from math import degrees, radians
 
-class RobotControlGui(QMainWindow, Ui_MainWindow):
+
+from fake_api.fake_motion import RobotControl, LedLamp, Waypoint
+
+class RobotGui(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.config = Config()

@@ -1,4 +1,5 @@
-from module_a.gui import RobotControlGui
+from module_a.gui import RobotGui
+from module_b.gui import RobotAutoGui
 import sys
 from PyQt5.QtWidgets import QApplication
 
@@ -6,7 +7,8 @@ from PyQt5.QtWidgets import QApplication
 
 def main():
     app = QApplication(sys.argv)
-    window = RobotControlGui()
+    # window = RobotGui()
+    window = RobotAutoGui()
     window.show()
     app.exec_()
 
