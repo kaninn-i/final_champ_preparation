@@ -50,7 +50,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Схват</string>
+     <string>Схватить</string>
     </property>
    </widget>
    <widget class="QPlainTextEdit" name="logs_plaintext">
@@ -99,7 +99,7 @@
    <widget class="QLabel" name="state_label">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>150</x>
       <y>10</y>
       <width>91</width>
       <height>17</height>
@@ -428,7 +428,7 @@
    <widget class="QLabel" name="state_data_label">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>150</x>
       <y>40</y>
       <width>67</width>
       <height>17</height>
