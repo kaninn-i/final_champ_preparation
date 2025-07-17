@@ -365,7 +365,7 @@
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>300</x>
       <y>10</y>
       <width>861</width>
       <height>181</height>
@@ -466,7 +466,7 @@
      <rect>
       <x>150</x>
       <y>40</y>
-      <width>67</width>
+      <width>131</width>
       <height>17</height>
      </rect>
     </property>
@@ -665,7 +665,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>860</y>
+      <y>890</y>
       <width>93</width>
       <height>28</height>
      </rect>
@@ -678,7 +678,7 @@
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>860</y>
+      <y>890</y>
       <width>93</width>
       <height>28</height>
      </rect>
@@ -687,7 +687,7 @@
      <string>Стоп</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="reset_programm_button">
+   <widget class="QPushButton" name="clear_programm_button">
     <property name="geometry">
      <rect>
       <x>110</x>
@@ -697,7 +697,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Сброс</string>
+     <string>Очистить</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
