@@ -25,10 +25,11 @@ class RobotGui(QMainWindow, Ui_MainWindow):
     def update_status(self, state: str):
         states = {
             'ON': {'code': '0100', 'label':'В работе'},
-            'WAIT': {'code': '1000', 'label':'Ожидание'},
+            'WAIT': {'code': '1000', 'label':'Ожидает'},
             'PAUSE':{'code': '0010', 'label':'Приостановлен'},
             'EMERGENCY':{'code': "0001", 'label':'Аварийная остановка'},
-            'BLACKOUT':{'code': "0000", 'label':'Робот выключен'}
+            'BLACKOUT':{'code': "0000", 'label':'Робот выключен'},
+            'FULL_LIGHTS':{'code': "1111", 'label':'Робот подключен'}
         }
 
         if state in states:
@@ -39,7 +40,7 @@ class RobotGui(QMainWindow, Ui_MainWindow):
     def connect_all(self):
         if self.robot.connect():
             self.logger.info('Робот включен')
-            self.update_status('WAIT')
+            self.update_status('FULL_LIGHTS')
         else:
             self.logger.error('Робот не подключен')
 
@@ -146,7 +147,7 @@ class RobotGui(QMainWindow, Ui_MainWindow):
         elif mode == 'JOINT_MODE':
             self.robot.moveToPointJ(wp)
         self.update_status('WAIT')
-        self.logger.info(f'Текущие координаты: {position}')
+        self.logger.info(f'Текущая координата рабочего инструмента: {position}')
 
     def update_status_table(self):
         temp = self.robot.getActualTemperature()
@@ -169,7 +170,7 @@ class RobotGui(QMainWindow, Ui_MainWindow):
             self.ui.Gripper_button.setText('Отпустить')
             self.logger.info('Гриппер включен')
         elif self.ui.Gripper_button.text() == 'Отпустить':
-            self.robot.disengage()
+            self.robot.toolOFF()
             self.ui.Gripper_button.setText('Схватить')
             self.logger.info('Гриппер выключен')
     
